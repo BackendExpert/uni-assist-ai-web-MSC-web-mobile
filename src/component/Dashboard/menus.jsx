@@ -39,6 +39,7 @@ import {
     MdPeople,
     MdAdminPanelSettings,
     MdFolder,
+    MdFactCheck,
 } from "react-icons/md";
 import { BsDatabaseFillGear } from "react-icons/bs";
 
@@ -129,6 +130,25 @@ export const Admin = [
         ],
     },
     {
+        section: "Plans",
+        items: [
+            {
+                name: "Plans Management",
+                icon: <MdFactCheck />,
+                submenu: [
+                    {
+                        name: "Plans",
+                        link: "/dashboard/plans",
+                    },
+                    {
+                        name: "Create New  Plan",
+                        link: "/dashboard/Plan/create",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         section: "Security",
         items: [
             {
@@ -177,7 +197,7 @@ export const studentMenu = [
         ],
     },
     {
-        section: "other",
+        section: "Resource",
         items: [
             {
                 name: "Resource Management",
@@ -198,6 +218,25 @@ export const studentMenu = [
                     {
                         name: "Start AI Chatting",
                         link: "/dashboard/resource/chat-assist",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        section: "Plans",
+        items: [
+            {
+                name: "Plans Management",
+                icon: <MdFactCheck />,
+                submenu: [
+                    {
+                        name: "Plans",
+                        link: "/dashboard/plans",
+                    },
+                    {
+                        name: "Create New  Plan",
+                        link: "/dashboard/Plan/create",
                     },
                 ],
             },

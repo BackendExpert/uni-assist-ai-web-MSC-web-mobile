@@ -34,6 +34,8 @@ import CreateResources from '../pages/Dashboard/resource/CreateResources'
 // import ViewResources from '../pages/Dashboard/resource/ViewResources'
 import Bookmarked from '../pages/Dashboard/resource/Bookmarked'
 import ChatAssist from '../pages/Dashboard/resource/ChatAssist'
+import Plans from '../pages/Dashboard/Plans/Plans'
+import CreatePlan from '../pages/Dashboard/Plans/CreatePlan'
 
 
 function App() {
@@ -70,6 +72,12 @@ function App() {
                     {/* <Route path='resource/view/:id' element={<PrivateRoute roles={['admin', 'student', ]} ><ViewResources /></PrivateRoute>}/> */}
                     <Route path='resource/bookmarked' element={<PrivateRoute roles={['admin', 'student', ]} ><Bookmarked /></PrivateRoute>}/>
                     <Route path='resource/chat-assist' element={<PrivateRoute roles={['admin', 'student', ]} ><ChatAssist /></PrivateRoute>}/>
+
+                    {/* Plans */}
+                    <Route path='plans' element={<PrivateRoute roles={['admin', 'student', ]} ><Plans /></PrivateRoute>}/>
+                    <Route path='plan/create' element={<PrivateRoute roles={['admin', 'student', ]} ><CreatePlan /></PrivateRoute>}/>
+
+
 
 
                     {/* Admin */}
