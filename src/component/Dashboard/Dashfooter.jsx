@@ -6,7 +6,7 @@ const DashFooter = () => {
     const year = new Date().getFullYear();
 
     const quickLinks = [
-        { name: "Home", href: "https://zenson.ai/" },
+        { name: "Home", href: "#" },
         { name: "Documentation", href: "#" },
         { name: "Student Support", href: "#" },
         { name: "Teacher Resources", href: "#" },
@@ -36,7 +36,7 @@ const DashFooter = () => {
 
                             <div>
                                 <h1 className="text-xl font-bold text-gray-900">
-                                    ZensonEdu AI
+                                    UniAssistAI
                                 </h1>
 
                                 <p className="text-xs text-indigo-600 font-medium">
@@ -116,7 +116,7 @@ const DashFooter = () => {
                 <div className="mt-14 pt-7 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
 
                     <p className="text-xs text-gray-400">
-                        © {year} ZensonEdu AI. All rights reserved | Developed and Maintained by <a href="https://zenson.ai/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700">ZensonAI</a>
+                        © {year} UniAssist AI. All rights reserved | Developed and Maintained by <a href="#" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700"></a>
                     </p>
 
                     <p className="text-xs text-gray-400">

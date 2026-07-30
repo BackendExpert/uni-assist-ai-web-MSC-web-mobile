@@ -16,30 +16,11 @@ const Dashboard = () => {
 
     let userdashtext = ''
 
-    if (auth.role === "super_admin") {
-        userdashtext = "Super Admin"
-    }
-    else if (auth.role === "system_admin") {
-        userdashtext = "System Admin"
-    }
-    else {
-        userdashtext = "User"
-    }
-
-    if (auth.role === "super_admin") {
-        userdashtext = "Super Admin"
-    }
-    else if (auth.role === "institute_admin") {
-        userdashtext = "Institute Admin"
-    }
-    else if (auth.role === "teacher") {
-        userdashtext = "Teacher"
+    if (auth.role === "admin") {
+        userdashtext = "Admin"
     }
     else if (auth.role === "student") {
         userdashtext = "Student"
-    }
-    else if (auth.role === "parent") {
-        userdashtext = "Parent"
     }
 
     return (

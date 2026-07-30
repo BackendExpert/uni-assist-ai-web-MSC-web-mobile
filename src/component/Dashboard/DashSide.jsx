@@ -73,7 +73,7 @@ const DashSide = ({ closeSidebar }) => {
 
                     <div className="leading-tight">
                         <p className="text-base font-semibold text-gray-800">
-                            ZensonEdu AI
+                            UniAssistAI
                         </p>
 
                         <p className="text-xs font-medium text-indigo-500">
