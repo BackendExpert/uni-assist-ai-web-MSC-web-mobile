@@ -25,6 +25,7 @@ import {
     FaBuilding,
     FaGraduationCap,
     FaCreditCard,
+    FaRobot
 } from "react-icons/fa";
 
 import {
@@ -38,8 +39,6 @@ import {
     MdAdminPanelSettings,
     MdFolder,
 } from "react-icons/md";
-
-
 
 
 export const Admin = [
@@ -70,8 +69,22 @@ export const Admin = [
                     },
                 ],
             },
+            {
+                name: "Chatbot Management",
+                icon: <FaRobot />,
+                submenu: [
+                    {
+                        name: "Chatbot Data",
+                        link: "/dashboard/website/chatbot",
+                    },
+                    {
+                        name: "Add New Document",
+                        link: "/dashboard/website/create",
+                    },
+                ],
+            },
         ],
-    },
+    }, 
     {
         section: "Security",
         items: [

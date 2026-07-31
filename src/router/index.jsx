@@ -23,6 +23,7 @@ import LoginHistory from '../pages/Dashboard/superAdmin/security/LoginHistory'
 import UserAuditLog from '../pages/Dashboard/superAdmin/security/UserAuditLog'
 import Users from '../pages/Dashboard/superAdmin/plaftfrom/Users'
 import Notifications from '../pages/Dashboard/Notifications/Notifications'
+import ChatBotManage from '../pages/Dashboard/superAdmin/ChatbotData/ChatBotManage'
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                     <Route path='security/login-history' element={<PrivateRoute roles={['admin']} ><LoginHistory /></PrivateRoute>}/>
                     <Route path='security/user-auditlog/:id' element={<PrivateRoute roles={['admin']} ><UserAuditLog /></PrivateRoute>}/>
 
+                    <Route path='website/chatbot' element={<PrivateRoute roles={['admin']} ><ChatBotManage /></PrivateRoute>}/>
 
 
                 </Route>
