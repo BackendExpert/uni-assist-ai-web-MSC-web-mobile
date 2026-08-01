@@ -24,6 +24,11 @@ import UserAuditLog from '../pages/Dashboard/superAdmin/security/UserAuditLog'
 import Users from '../pages/Dashboard/superAdmin/plaftfrom/Users'
 import Notifications from '../pages/Dashboard/Notifications/Notifications'
 import ChatBotManage from '../pages/Dashboard/superAdmin/ChatbotData/ChatBotManage'
+import AddNewDocs from '../pages/Dashboard/superAdmin/ChatbotData/AddNewDocs'
+import CreateAnnouncements from '../pages/Dashboard/superAdmin/Announcements/CreateAnnouncements'
+import Announcements from '../pages/Dashboard/superAdmin/Announcements/Announcements'
+import ViewAnnouncement from '../pages/Dashboard/superAdmin/Announcements/ViewAnnouncement'
+import UserAnnouncements from '../pages/Dashboard/Announcements/UserAnnouncements'
 
 
 function App() {
@@ -53,6 +58,9 @@ function App() {
                     <Route path='my-profile' element={<PrivateRoute roles={['admin', 'student', ]} ><MyProfile /></PrivateRoute>}/>
                     <Route path='notifications' element={<PrivateRoute roles={['admin', 'student', ]} ><Notifications /></PrivateRoute>}/>
 
+                    <Route path='my-announcements' element={<PrivateRoute roles={['admin', 'student', ]} ><UserAnnouncements /></PrivateRoute>}/>
+
+
                     {/* Admin */}
                     <Route path='platfrom-users' element={<PrivateRoute roles={['admin']} ><Users /></PrivateRoute>}/>
                     <Route path='platfrom-user/:id' element={<PrivateRoute roles={['admin']} ><ViewUser /></PrivateRoute>}/>
@@ -63,6 +71,13 @@ function App() {
                     <Route path='security/user-auditlog/:id' element={<PrivateRoute roles={['admin']} ><UserAuditLog /></PrivateRoute>}/>
 
                     <Route path='website/chatbot' element={<PrivateRoute roles={['admin']} ><ChatBotManage /></PrivateRoute>}/>
+                    <Route path='website/create-system-files' element={<PrivateRoute roles={['admin']} ><AddNewDocs /></PrivateRoute>}/>
+                    
+                    <Route path='announcements/manage' element={<PrivateRoute roles={['admin']} ><Announcements /></PrivateRoute>}/>
+                    <Route path='announcement/create' element={<PrivateRoute roles={['admin']} ><CreateAnnouncements /></PrivateRoute>}/>
+                    <Route path='announcement/view/:id' element={<PrivateRoute roles={['admin']} ><ViewAnnouncement /></PrivateRoute>}/>
+
+
 
 
                 </Route>

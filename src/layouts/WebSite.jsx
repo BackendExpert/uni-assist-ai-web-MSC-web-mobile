@@ -4,6 +4,7 @@ import Nav from '../component/Nav/Nav'
 import Footer from '../component/Nav/Footer'
 import PagesFooter from '../component/Nav/PagesFooter'
 import LoginFooter from '../component/Nav/LoginFooter'
+import ChatBot from '../component/chatbot/ChatBot'
 
 const WebSite = () => {
     const location = useLocation();
@@ -39,6 +40,8 @@ const WebSite = () => {
                     <PagesFooter />
                 )}
             </div>
+
+            {/* <ChatBot /> */}
         </div>
     )
 }

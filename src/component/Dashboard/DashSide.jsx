@@ -171,7 +171,14 @@ const DashSide = ({ closeSidebar }) => {
                                                                     <NavLink
                                                                         key={sub.link}
                                                                         to={sub.link}
-                                                                        onClick={closeSidebar}
+                                                                        onClick={() => {
+                                                                            window.scrollTo({
+                                                                                top: 0,
+                                                                                behavior: "smooth",
+                                                                            });
+
+                                                                            closeSidebar?.();
+                                                                        }}
                                                                         className={({ isActive }) =>
                                                                             `block px-3 py-1.5 rounded-md text-sm transition ${isActive
                                                                                 ? "text-indigo-600 font-medium"
@@ -194,7 +201,14 @@ const DashSide = ({ closeSidebar }) => {
 
                                             <NavLink
                                                 to={item.link}
-                                                onClick={closeSidebar}
+                                                onClick={() => {
+                                                    window.scrollTo({
+                                                        top: 0,
+                                                        behavior: "smooth",
+                                                    });
+
+                                                    closeSidebar?.();
+                                                }}
                                                 className={({ isActive }) =>
                                                     `relative flex items-center gap-3 px-3 py-2.5 rounded-xl transition ${isActive
                                                         ? "bg-indigo-50 text-indigo-600"

@@ -2,6 +2,7 @@ import {
     BiSolidDashboard,
     BiBuildings,
     BiShield,
+    BiSolidMegaphone,
 } from "react-icons/bi";
 
 import {
@@ -79,12 +80,26 @@ export const Admin = [
                     },
                     {
                         name: "Add New Document",
-                        link: "/dashboard/website/create",
+                        link: "/dashboard/website/create-system-files",
+                    },
+                ],
+            },
+            {
+                name: "Announcements Management",
+                icon: <BiSolidMegaphone />,
+                submenu: [
+                    {
+                        name: "Announcements",
+                        link: "/dashboard/announcements/manage",
+                    },
+                    {
+                        name: "Add New Document",
+                        link: "/dashboard/announcement/create",
                     },
                 ],
             },
         ],
-    }, 
+    },
     {
         section: "Security",
         items: [
@@ -115,6 +130,21 @@ export const studentMenu = [
                 name: "Dashboard",
                 link: "/dashboard",
                 icon: <BiSolidDashboard />,
+            },
+        ],
+    },
+    {
+        section: "Main",
+        items: [
+            {
+                name: "Announcements",
+                icon: <BiSolidMegaphone />,
+                submenu: [
+                    {
+                        name: "Announcements",
+                        link: "/dashboard/my-announcements",
+                    },
+                ],
             },
         ],
     },
