@@ -40,6 +40,7 @@ import {
     MdAdminPanelSettings,
     MdFolder,
 } from "react-icons/md";
+import { BsDatabaseFillGear } from "react-icons/bs";
 
 
 export const Admin = [
@@ -101,6 +102,33 @@ export const Admin = [
         ],
     },
     {
+        section: "other",
+        items: [
+            {
+                name: "Resource Management",
+                icon: <BsDatabaseFillGear />,
+                submenu: [
+                    {
+                        name: "Resources",
+                        link: "/dashboard/resources",
+                    },
+                    {
+                        name: "Create New  Resource",
+                        link: "/dashboard/resource/create",
+                    },
+                    {
+                        name: "Bookmarked Resource",
+                        link: "/dashboard/resource/bookmarked",
+                    },
+                    {
+                        name: "Start AI Chatting",
+                        link: "/dashboard/resource/chat-assist",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         section: "Security",
         items: [
             {
@@ -143,6 +171,33 @@ export const studentMenu = [
                     {
                         name: "Announcements",
                         link: "/dashboard/my-announcements",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        section: "other",
+        items: [
+            {
+                name: "Resource Management",
+                icon: <BsDatabaseFillGear />,
+                submenu: [
+                    {
+                        name: "Resources",
+                        link: "/dashboard/resources",
+                    },
+                    {
+                        name: "Create New  Resource",
+                        link: "/dashboard/resource/create",
+                    },
+                    {
+                        name: "Bookmarked Resource",
+                        link: "/dashboard/resource/bookmarked",
+                    },
+                    {
+                        name: "Start AI Chatting",
+                        link: "/dashboard/resource/chat-assist",
                     },
                 ],
             },

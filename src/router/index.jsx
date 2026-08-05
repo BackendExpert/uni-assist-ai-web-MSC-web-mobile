@@ -29,6 +29,11 @@ import CreateAnnouncements from '../pages/Dashboard/superAdmin/Announcements/Cre
 import Announcements from '../pages/Dashboard/superAdmin/Announcements/Announcements'
 import ViewAnnouncement from '../pages/Dashboard/superAdmin/Announcements/ViewAnnouncement'
 import UserAnnouncements from '../pages/Dashboard/Announcements/UserAnnouncements'
+import Resources from '../pages/Dashboard/resource/Resources'
+import CreateResources from '../pages/Dashboard/resource/CreateResources'
+// import ViewResources from '../pages/Dashboard/resource/ViewResources'
+import Bookmarked from '../pages/Dashboard/resource/Bookmarked'
+import ChatAssist from '../pages/Dashboard/resource/ChatAssist'
 
 
 function App() {
@@ -59,6 +64,12 @@ function App() {
                     <Route path='notifications' element={<PrivateRoute roles={['admin', 'student', ]} ><Notifications /></PrivateRoute>}/>
 
                     <Route path='my-announcements' element={<PrivateRoute roles={['admin', 'student', ]} ><UserAnnouncements /></PrivateRoute>}/>
+                    
+                    <Route path='resources' element={<PrivateRoute roles={['admin', 'student', ]} ><Resources /></PrivateRoute>}/>
+                    <Route path='resource/create' element={<PrivateRoute roles={['admin', 'student', ]} ><CreateResources /></PrivateRoute>}/>
+                    {/* <Route path='resource/view/:id' element={<PrivateRoute roles={['admin', 'student', ]} ><ViewResources /></PrivateRoute>}/> */}
+                    <Route path='resource/bookmarked' element={<PrivateRoute roles={['admin', 'student', ]} ><Bookmarked /></PrivateRoute>}/>
+                    <Route path='resource/chat-assist' element={<PrivateRoute roles={['admin', 'student', ]} ><ChatAssist /></PrivateRoute>}/>
 
 
                     {/* Admin */}
