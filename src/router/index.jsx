@@ -36,6 +36,7 @@ import Bookmarked from '../pages/Dashboard/resource/Bookmarked'
 import ChatAssist from '../pages/Dashboard/resource/ChatAssist'
 import Plans from '../pages/Dashboard/Plans/Plans'
 import CreatePlan from '../pages/Dashboard/Plans/CreatePlan'
+import ViewFullPlan from '../pages/Dashboard/Plans/ViewFullPlan'
 
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
                     {/* Plans */}
                     <Route path='plans' element={<PrivateRoute roles={['admin', 'student', ]} ><Plans /></PrivateRoute>}/>
                     <Route path='plan/create' element={<PrivateRoute roles={['admin', 'student', ]} ><CreatePlan /></PrivateRoute>}/>
+                    <Route path='plan/view-plan/:id' element={<PrivateRoute roles={['admin', 'student', ]} ><ViewFullPlan /></PrivateRoute>}/>
 
 
 
