@@ -109,24 +109,6 @@ const DashNav = () => {
 
                     {/* RIGHT */}
                     <div className="flex items-center gap-2" ref={dropdownRef}>
-                        {/* SEARCH */}
-                        <button
-                            onClick={() => setSearchOpen(true)}
-                            className="p-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-indigo-600 transition"
-                        >
-                            <FiSearch />
-                        </button>
-
-                        {/* ICONS */}
-                        {[FiMail, FiBell].map((Icon, i) => (
-                            <motion.button
-                                key={i}
-                                whileHover={{ scale: 1.1 }}
-                                className="p-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-indigo-600 transition"
-                            >
-                                <Icon />
-                            </motion.button>
-                        ))}
 
                         {/* PROFILE */}
                         <div className="relative">
@@ -194,7 +176,7 @@ const DashNav = () => {
                                                 Profile
                                             </Link>
                                             <Link
-                                                to="/Dashboard/settings"
+                                                to="/Dashboard/my-profile"
                                                 className="flex items-center justify-center gap-2 px-2 py-2 rounded-lg bg-indigo-50 text-indigo-600 hover:bg-indigo-100 transition text-sm font-medium"
                                             >
                                                 <FiSettings className="w-4 h-4" />
@@ -204,13 +186,6 @@ const DashNav = () => {
 
                                         {/* MENU */}
                                         <div className="py-2">
-                                            <button
-                                                onClick={headleLogout}
-                                                className="flex items-center gap-2 w-full text-left px-4 py-2 text-red-500 hover:bg-red-50 rounded-lg transition text-sm font-medium"
-                                            >
-                                                <FiLogOut className="w-4 h-4" />
-                                                Logout
-                                            </button>
                                             <Link
                                                 to="/Dashboard/notifications"
                                                 className="flex items-center gap-2 w-full text-left px-4 py-2 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition text-sm font-medium"
@@ -218,14 +193,14 @@ const DashNav = () => {
                                                 <FiBell className="w-4 h-4" />
                                                 Notifications
                                             </Link>
-                                            <Link
-                                                to="/Dashboard/messages"
-                                                className="flex items-center gap-2 w-full text-left px-4 py-2 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition text-sm font-medium"
+                                            <button
+                                                onClick={headleLogout}
+                                                className="flex items-center gap-2 w-full text-left px-4 py-2 text-red-500 hover:bg-red-50 rounded-lg transition text-sm font-medium"
                                             >
-                                                <FiMail className="w-4 h-4" />
+                                                <FiLogOut className="w-4 h-4" />
+                                                Logout
+                                            </button>
 
-                                                Messages
-                                            </Link>
                                         </div>
                                     </motion.div>
                                 )}

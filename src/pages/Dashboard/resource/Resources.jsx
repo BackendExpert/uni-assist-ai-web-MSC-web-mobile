@@ -13,6 +13,8 @@ const Resources = () => {
 
 
     const [loading, setLoading] = useState(false)
+    const [deleteLoading, setDeleteLoading] = useState(null)
+
     const [toast, setToast] = useState(false)
 
     const itemsPerPage = 16
@@ -119,6 +121,45 @@ const Resources = () => {
         }
         finally {
             setLoading(false)
+        }
+    }
+
+
+    const headleDeleteResoruce = async (e, id) => {
+        e.preventDefault()
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this resource?")
+
+        if (!confirmDelete) {
+            return
+        }
+
+        setDeleteLoading(id)
+
+        try {
+            const res = await API.delete(`/resource/delete-resource/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+
+            if (res.data.success === true) {
+                setToast({
+                    success: true,
+                    message: res.data.message,
+                })
+
+                setTimeout(() => window.location.reload(), 3000)
+            }
+
+        } catch (err) {
+            setToast({
+                success: false,
+                message: err.response?.data?.message || "Something went wrong",
+            })
+        }
+        finally {
+            setDeleteLoading(null)
         }
     }
 
@@ -334,6 +375,30 @@ const Resources = () => {
                                                     type="button"
                                                     label="⭐ Bookmark Resource"
                                                 />
+                                            </div>
+
+                                            <div className="">
+                                                {
+                                                    auth?.role === "admin" ||
+                                                        resource?.uploader?._id?.toString() === auth?.user?.id?.toString()
+                                                        ?
+                                                        <div>
+                                                            <button
+                                                                onClick={(e) => headleDeleteResoruce(e, resource._id)}
+                                                                className="px-4 py-2 rounded-lg bg-red-50 text-red-600 border border-red-200 text-sm font-semibold hover:bg-red-600 hover:text-white transition-all duration-300"
+                                                            >
+                                                                {
+                                                                    deleteLoading === resource._id
+                                                                        ? "Deleting Resource..."
+                                                                        : "Delete Resource"
+                                                                }
+                                                            </button>
+                                                        </div>
+                                                        :
+                                                        <div>
+                                                            Cannot delete
+                                                        </div>
+                                                }
                                             </div>
                                         </div>
                                     </div>

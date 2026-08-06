@@ -8,6 +8,12 @@ import PieChart from './components/charts/PieChart'
 import UsersChart from './DashHome/AdminCharts/UsersChart'
 import AnnounsmentChart from './DashHome/AdminCharts/AnnounsmentChart'
 import AnnounsmentsPie from './DashHome/AdminCharts/AnnounsmentsPie'
+import AnnouncementTable from './DashHome/AnnouncementTable'
+import MyResources from './DashHome/AdminCharts/MyResources'
+import MyNotifications from './DashHome/AdminCharts/MyNotifications'
+import MyPlans from './DashHome/AdminCharts/MyPlans'
+import UserDash from '../../assets/UserDash.svg'
+
 
 const DashHome = () => {
     const { auth } = useAuth()
@@ -44,7 +50,9 @@ const DashHome = () => {
                                             <UsersChart />
                                         </div>
                                     ) : (
-                                        <div></div>
+                                        <div>
+                                            <MyResources />
+                                        </div>
                                     )
                                 }
                             </div>
@@ -56,7 +64,9 @@ const DashHome = () => {
                                             <AnnounsmentChart />
                                         </div>
                                     ) : (
-                                        <div></div>
+                                        <div>
+                                            <MyPlans />
+                                        </div>
                                     )
                                 }
                             </div>
@@ -68,11 +78,35 @@ const DashHome = () => {
                                             <AnnounsmentsPie />
                                         </div>
                                     ) : (
-                                        <div></div>
+                                        <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
+                                            <div className="flex justify-center mb-5">
+                                                <img
+                                                    src={UserDash}
+                                                    alt=""
+                                                    className="w-32 h-32 object-cover"
+                                                />
+                                            </div>
+
+                                            <h1 className="text-2xl font-bold text-gray-800">
+                                                Welcome to System
+                                            </h1>
+
+                                            <p className="text-sm text-gray-500 mt-2">
+                                                {auth?.user?.email}
+                                            </p>
+
+                                            <div className="mt-4 inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium">
+                                                Active User
+                                            </div>
+                                        </div>
                                     )
                                 }
                             </div>
                         </div>
+                    </div>
+
+                    <div className="mt-4">
+                        <AnnouncementTable />
                     </div>
                 </div>
 
@@ -110,7 +144,9 @@ const DashHome = () => {
                                     <AuditLogs />
                                 </div>
                                 :
-                                <div className=""></div>
+                                <div className="">
+                                    <MyNotifications />
+                                </div>
                         }
                     </div>
                 </div>
