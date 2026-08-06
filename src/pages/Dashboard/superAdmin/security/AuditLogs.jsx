@@ -55,7 +55,7 @@ const AuditLogs = () => {
             })
 
             if (res.data.success === true) {
-                console.log(res.data.result)
+                // console.log(res.data.result)
                 setAuditlogs(res.data.result || [])
             }
 
