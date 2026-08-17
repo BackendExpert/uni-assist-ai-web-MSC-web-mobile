@@ -41,7 +41,7 @@ const WebSite = () => {
                 )}
             </div>
 
-            {/* <ChatBot /> */}
+            <ChatBot />
         </div>
     )
 }
