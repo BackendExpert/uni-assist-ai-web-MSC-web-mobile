@@ -36,9 +36,13 @@ const ForgetPassword = () => {
             }
         }
         catch (err) {
+            console.error("VERIFY OTP ERROR:", err);
+            console.error("RESPONSE:", err.response);
+            console.error("RESPONSE DATA:", err.response?.data);
+
             setToast({
                 success: false,
-                message: err.response?.data?.message || "Something went wrong",
+                message: err.response?.data?.message || err.message || "Something went wrong",
             });
         }
         finally {
