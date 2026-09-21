@@ -21,6 +21,7 @@ const ForgetPassword = () => {
         setLoading(true)
 
         try {
+            const res = await API.post('/auth/request-password-reset', values)
             if (res.data.success === true) {
                 localStorage.removeItem('reset_token')
                 localStorage.removeItem('verified_token')
@@ -36,13 +37,9 @@ const ForgetPassword = () => {
             }
         }
         catch (err) {
-            console.error("VERIFY OTP ERROR:", err);
-            console.error("RESPONSE:", err.response);
-            console.error("RESPONSE DATA:", err.response?.data);
-
             setToast({
                 success: false,
-                message: err.response?.data?.message || err.message || "Something went wrong",
+                message: err.response?.data?.message || "Something went wrong",
             });
         }
         finally {
