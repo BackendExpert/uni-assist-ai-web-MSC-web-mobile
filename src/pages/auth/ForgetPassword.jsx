@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const ForgetPassword = () => {
     const [loading, setLoading] = useState(false)
     const [toast, setToast] = useState(false)
-    const navigate = useNavigate()    
+    const navigate = useNavigate()
 
     const { values, handleChange } = useForm({
         email: '',
@@ -21,13 +21,17 @@ const ForgetPassword = () => {
         setLoading(true)
 
         try {
-            const res = await API.post('/auth/request-password-reset', values)
             if (res.data.success === true) {
+                localStorage.removeItem('reset_token')
+                localStorage.removeItem('verified_token')
+
+                localStorage.setItem('reset_token', res.data.token)
+
                 setToast({
                     success: true,
                     message: res.data.message,
                 });
-                localStorage.setItem('reset_token', res.data.token)
+
                 setTimeout(() => navigate("/verify-otp"), 3000);
             }
         }
